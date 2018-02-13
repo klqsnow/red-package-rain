@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>红包雨</title>
+    <meta name="viewport" content="width=750,minimum-scale=0.5,maximum-scale=0.5,initial-scale=0.5"/>
+    <style type="text/css">
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script src="applocal://www/cordova.min.js"></script>
+</head>
+
+<body style="background: #000">
+    <div id="gameScreen">
+        <audio id="audioCountDown" src='assets/audio/countdown.mp3'></audio>
+        <audio id="audioOpen" src='assets/audio/open-redpacket.mp3'></audio>
+    </div>
+    <div id="played" style="display: none;width: 100%;background: #000;position: relative;">
+        <img style="width: 100%;margin-top: 25%;" src="./assets/img/167150320612751496.png" alt="">
+        <div style="position: absolute;bottom: 35px;text-align: center;width: 100%">
+            <a href="javascript:void(0)" onclick="getOut();"><img style="width: 194px;height: 66px;" src="./assets/img/back.png" alt=""></a>
+        </div>
+
+    </div>
+    <script src='./js/pixi.js'></script>
+    <script src='./js/p2.js'></script>
+    <script src='./js/phaser-split.js'></script>
+    <script>
+        function getOut(){
+//  cordova.exec(function(result) {}, function(error) {}, "appStore", "exit", []);
+            cordova.exec(function(result) {}, function(error) {}, "WorkPlus_WebView", "exit", []);
+        }
+    </script>
+</body>
+
+</html>
